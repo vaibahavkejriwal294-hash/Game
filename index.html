@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Collection | Play Amazing Games</title>
+    <meta name="description" content="Play amazing free online games - Puzzle, Action, Racing, and more!">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div id="main-menu" class="menu-container">
+        <div class="menu-content">
+            <div class="header-section">
+                <h1 class="glowing-title">🎮 Game Collection</h1>
+                <p class="subtitle">Choose a game and start playing!</p>
+                <div class="category-filter">
+                    <button class="filter-btn active" data-filter="all">All Games</button>
+                    <button class="filter-btn" data-filter="puzzle">🧩 Puzzle</button>
+                    <button class="filter-btn" data-filter="action">⚡ Action</button>
+                    <button class="filter-btn" data-filter="arcade">🕹️ Arcade</button>
+                    <button class="filter-btn" data-filter="strategy">🎯 Strategy</button>
+                </div>
+            </div>
+            <div class="game-grid">
+                <!-- Existing Games -->
+                <div class="game-card" data-game="tictactoe" data-category="strategy">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">⭕</div>
+                    <h2>Tic-Tac-Toe</h2>
+                    <p>Classic 3x3 grid game</p>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="game-card" data-game="snake" data-category="arcade">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🐍</div>
+                    <h2>Snake Game</h2>
+                    <p>Eat food and grow!</p>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="game-card" data-game="car" data-category="action">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🚗</div>
+                    <h2>Car Racing</h2>
+                    <p>Avoid obstacles!</p>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="game-card" data-game="pong" data-category="arcade">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🏓</div>
+                    <h2>Pong</h2>
+                    <p>Classic paddle game</p>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="game-card" data-game="memory" data-category="puzzle">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🧠</div>
+                    <h2>Memory Game</h2>
+                    <p>Match the pairs!</p>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="game-card" data-game="breakout" data-category="arcade">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🎯</div>
+                    <h2>Breakout</h2>
+                    <p>Break all the bricks!</p>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+
+                <!-- NEW GAMES -->
+                <div class="game-card" data-game="tetris" data-category="puzzle">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🧱</div>
+                    <h2>Tetris</h2>
+                    <p>Stack the blocks!</p>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="game-card" data-game="minesweeper" data-category="strategy">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">💣</div>
+                    <h2>Minesweeper</h2>
+                    <p>Find the mines!</p>
+                    <span class="difficulty hard">Hard</span>
+                </div>
+                <div class="game-card" data-game="2048" data-category="puzzle">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🔢</div>
+                    <h2>2048</h2>
+                    <p>Merge to win!</p>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="game-card" data-game="flappybird" data-category="action">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🐦</div>
+                    <h2>Flappy Bird</h2>
+                    <p>Fly through pipes!</p>
+                    <span class="difficulty hard">Hard</span>
+                </div>
+                <div class="game-card" data-game="spaceinvaders" data-category="action">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">👾</div>
+                    <h2>Space Invaders</h2>
+                    <p>Defend the galaxy!</p>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="game-card" data-game="wordle" data-category="puzzle">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">📝</div>
+                    <h2>Word Guess</h2>
+                    <p>Guess the word!</p>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="game-card" data-game="dino" data-category="action">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🦖</div>
+                    <h2>Dino Runner</h2>
+                    <p>Jump over obstacles!</p>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="game-card" data-game="connect4" data-category="strategy">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🔴</div>
+                    <h2>Connect Four</h2>
+                    <p>Connect 4 to win!</p>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+                <div class="game-card" data-game="simon" data-category="puzzle">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🎨</div>
+                    <h2>Simon Says</h2>
+                    <p>Follow the pattern!</p>
+                    <span class="difficulty medium">Medium</span>
+                </div>
+                <div class="game-card" data-game="whackamole" data-category="arcade">
+                    <div class="card-glow"></div>
+                    <div class="game-icon">🔨</div>
+                    <h2>Whack-a-Mole</h2>
+                    <p>Hit the moles!</p>
+                    <span class="difficulty easy">Easy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-container" class="game-container hidden">
+        <button id="back-button" class="back-button">
+            <span class="btn-icon">←</span>
+            <span>Back to Menu</span>
+        </button>
+        <div id="game-area"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="games/tictactoe.js"></script>
+    <script src="games/snake.js"></script>
+    <script src="games/car.js"></script>
+    <script src="games/pong.js"></script>
+    <script src="games/memory.js"></script>
+    <script src="games/breakout.js"></script>
+    <script src="games/tetris.js"></script>
+    <script src="games/minesweeper.js"></script>
+    <script src="games/game2048.js"></script>
+    <script src="games/flappybird.js"></script>
+    <script src="games/spaceinvaders.js"></script>
+    <script src="games/wordle.js"></script>
+    <script src="games/dino.js"></script>
+    <script src="games/connect4.js"></script>
+    <script src="games/simon.js"></script>
+    <script src="games/whackamole.js"></script>
+</body>
+
+</html>
