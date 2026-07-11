@@ -2188,19 +2188,51 @@ h1 {
 .typing-word {
     display: inline-block;
     margin: 0 6px;
-    color: rgba(255, 255, 255, 0.4);
     transition: all 0.2s ease;
     border-bottom: 2px solid transparent;
 }
 
 .typing-word.current {
-    color: #fff;
     border-bottom-color: var(--accent);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .typing-word.completed {
     color: var(--success);
+}
+
+.char {
+    position: relative;
+    color: rgba(255, 255, 255, 0.45);
+    transition: all 0.1s ease;
+}
+
+.char.correct {
+    color: var(--success);
+    text-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+}
+
+.char.incorrect {
+    color: var(--danger);
+    text-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+    text-decoration: underline;
+}
+
+.char.incorrect.extra {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: 2px;
+}
+
+.active-char {
+    position: relative;
+    border-left: 2px solid var(--accent);
+    margin-left: -2px;
+    animation: typingCursor 1s infinite;
+}
+
+@keyframes typingCursor {
+    0%, 100% { border-left-color: var(--accent); }
+    50% { border-left-color: transparent; }
 }
 
 .typing-input {
@@ -2247,4 +2279,4 @@ h1 {
         line-height: 1.5em;
         padding: 16px;
     }
-}
+}
