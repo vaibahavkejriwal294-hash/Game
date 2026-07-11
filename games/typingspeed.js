@@ -10,7 +10,7 @@ class TypingSpeedGame {
             'code', 'game', 'play', 'fast', 'type', 'word', 'time', 'best', 'good', 'work',
             'make', 'life', 'love', 'just', 'know', 'take', 'come', 'think', 'look', 'want',
             'java', 'html', 'loop', 'data', 'node', 'file', 'push', 'pull', 'sort', 'find',
-            'grid', 'flex', 'page', 'link', 'form', 'view', 'edit', 'save', 'load', 'open'
+            'grid', 'flex', 'page', 'link', 'form', 'view', 'edit', 'save', 'load', 'open', 'Vaibhav', 'Kejriwal', 'Goat'
         ];
         this.currentWords = [];
         this.typedIndex = 0;
@@ -64,20 +64,71 @@ class TypingSpeedGame {
         const container = document.getElementById('typing-words');
         if (!container) return;
         container.innerHTML = '';
+        
+        const input = document.getElementById('typing-input');
+        const typed = input ? input.value : '';
+
         this.currentWords.forEach((word, i) => {
             const span = document.createElement('span');
             span.className = 'typing-word';
-            span.textContent = word;
-            if (i < this.typedIndex) span.classList.add('completed');
-            if (i === this.typedIndex) span.classList.add('current');
+            
+            if (i < this.typedIndex) {
+                span.classList.add('completed');
+                span.textContent = word;
+            } else if (i === this.typedIndex) {
+                span.classList.add('current');
+                
+                // Render characters of the current active word
+                for (let c = 0; c < word.length; c++) {
+                    const charSpan = document.createElement('span');
+                    charSpan.className = 'char';
+                    charSpan.textContent = word[c];
+                    
+                    if (c < typed.length) {
+                        if (typed[c] === word[c]) {
+                            charSpan.classList.add('correct');
+                        } else {
+                            charSpan.classList.add('incorrect');
+                        }
+                    } else if (c === typed.length) {
+                        charSpan.classList.add('active-char');
+                    }
+                    span.appendChild(charSpan);
+                }
+                
+                // If user typed beyond the length of the word (excess letters)
+                if (typed.length >= word.length) {
+                    for (let c = word.length; c < typed.length; c++) {
+                        const charSpan = document.createElement('span');
+                        charSpan.className = 'char incorrect extra';
+                        charSpan.textContent = typed[c];
+                        span.appendChild(charSpan);
+                    }
+                    // Place cursor indicator at the end of the text
+                    const caretSpan = document.createElement('span');
+                    caretSpan.className = 'char active-char';
+                    caretSpan.style.width = '0px';
+                    caretSpan.style.display = 'inline-block';
+                    span.appendChild(caretSpan);
+                }
+            } else {
+                span.textContent = word;
+            }
             container.appendChild(span);
         });
+
+        // Auto-scroll paragraph container to keep the active word centered
+        const currentWordSpan = container.querySelector('.typing-word.current');
+        if (currentWordSpan) {
+            container.scrollTop = currentWordSpan.offsetTop - container.clientHeight / 2 + currentWordSpan.clientHeight / 2;
+        }
     }
 
     handleInput(e) {
         if (!this.gameActive && this.timeLeft === 60) {
             this.startGame();
         }
+        this.renderWords();
     }
 
     startGame() {
