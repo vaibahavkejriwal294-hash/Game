@@ -3,14 +3,14 @@ class TypingSpeedGame {
     constructor(container) {
         this.container = container;
         this.words = [
-            'the', 'be', 'to', 'of', 'and', 'in', 'that', 'have', 'it', 'for',
-            'not', 'on', 'with', 'he', 'as', 'you', 'do', 'at', 'this', 'but',
-            'his', 'by', 'from', 'they', 'we', 'say', 'her', 'she', 'or', 'an',
+            'the', 'Typing?', 'to', 'of', 'and', 'in', '!', 'have', 'it', 'for',
+            'not', 'on', 'with', 'he', 'Brisbane', 'you', 'How?', 'at', 'this', 'but',
+            'hayabusa', 'by', 'from', 'they', 'hunter', 'say', 'her', 'she', 'umbrella', 'an',
             'will', 'my', 'one', 'all', 'would', 'there', 'their', 'what', 'so', 'up',
-            'code', 'game', 'play', 'fast', 'type', 'word', 'time', 'best', 'good', 'work',
+            'code', 'game', 'Ronin', 'fast', 'type', 'word', 'time', 'best', 'good', 'work',
             'make', 'life', 'love', 'just', 'know', 'take', 'come', 'think', 'look', 'want',
             'java', 'html', 'loop', 'data', 'node', 'file', 'push', 'pull', 'sort', 'find',
-            'grid', 'flex', 'page', 'link', 'form', 'view', 'edit', 'save', 'load', 'open', 'Vaibhav', 'Kejriwal', 'Goat'
+            'grid', 'flex', 'page', 'link', 'form', 'view', 'edit', 'save', 'load', 'open', 'Vellfire', 'Hangman', 'Goa'
         ];
         this.currentWords = [];
         this.typedIndex = 0;
@@ -55,7 +55,7 @@ class TypingSpeedGame {
 
     generateWords() {
         this.currentWords = [];
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) {
             this.currentWords.push(this.words[Math.floor(Math.random() * this.words.length)]);
         }
     }
@@ -119,9 +119,9 @@ class TypingSpeedGame {
 
         // Auto-scroll paragraph container to keep the active word centered
         const currentWordSpan = container.querySelector('.typing-word.current');
-        if (currentWordSpan) {
-            container.scrollTop = currentWordSpan.offsetTop - container.clientHeight / 2 + currentWordSpan.clientHeight / 2;
-        }
+        // if (currentWordSpan) {
+        //     container.scrollTop = currentWordSpan.offsetTop - container.clientHeight / 2 + currentWordSpan.clientHeight / 2;
+        // }
     }
 
     handleInput(e) {
